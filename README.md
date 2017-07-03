@@ -1,5 +1,7 @@
 # json-api-denormalizr
 
+[![CircleCI](https://circleci.com/gh/willsoto/json-api-denormalizr.svg?style=svg&circle-token=0b410de6b9ef748768a5d2cd9fc7f3eec658a27c)](https://circleci.com/gh/willsoto/json-api-denormalizr)
+
 ## Getting Started
 
 ```sh
