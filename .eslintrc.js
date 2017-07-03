@@ -11,13 +11,6 @@ module.exports = {
   },
   plugins: ['prettier'],
   extends: ['eslint:recommended', 'prettier', 'plugin:import/errors', 'plugin:import/warnings'],
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: path.resolve(__dirname, 'webpack.config.js')
-      }
-    }
-  },
   parserOptions: {
     sourceType: 'module'
   },
