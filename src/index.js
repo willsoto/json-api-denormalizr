@@ -1,9 +1,8 @@
 import _ from 'lodash';
 
-export const denormalize = (state, obj, options = {}) => {
+export const denormalize = (state, entity, options = {}) => {
   const pathToEntities = options.entities || 'entities';
   const allEntities = _.get(state, pathToEntities);
-  const entity = _.get(allEntities, obj);
 
   let result = {
     id: entity.id,
