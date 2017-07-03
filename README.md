@@ -10,9 +10,8 @@ npm install json-api-denormalizr --save
 
 * [Quick Start](#quickstart)
 * [API](#api)
- - [denormalize](#denormalize)
+  - [denormalize](#denormalize)
 * [Usage with Reselect](#usage-with-reselect)
-
 
 ## Quickstart
 
