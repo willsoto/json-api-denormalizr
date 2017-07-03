@@ -44,7 +44,11 @@ describe('integration with json-api-normalizer', function() {
   it('correctly denormalizes the state', function() {
     const entity = this.state.entities.postBlock['2620'];
 
-    expect(denormalize(this.state, entity)).to.eql({
+    expect(
+      denormalize(this.state, entity, {
+        pathToEntities: 'entities'
+      })
+    ).to.eql({
       id: '2620',
       question: {
         id: '295',

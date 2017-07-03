@@ -1,163 +1,161 @@
 {
-  "entities": {
-    "books": {
-      "1": {
-        "id": "1",
-        "attributes": {
-          "title": "The Stranger"
-        },
-        "links": {
-          "self": "/api/v1/books/1"
-        },
-        "relationships": {
-          "authors": {
-            "data": [
-              {
-                "id": "1",
-                "type": "authors"
-              }
-            ],
-            "links": {
-              "self": "/api/v1/books/1/relationships/authors",
-              "related": "/api/v1/books/1/authors"
-            }
-          },
-          "tags": {
-            "data": [
-              {
-                "id": "1",
-                "type": "tags"
-              },
-              {
-                "id": "2",
-                "type": "tags"
-              },
-              {
-                "id": "3",
-                "type": "tags"
-              }
-            ],
-            "links": {
-              "self": "/api/v1/books/1/relationships/tags",
-              "related": "/api/v1/books/1/tags"
-            }
-          }
-        }
-      }
-    },
-    "authors": {
-      "1": {
-        "id": "1",
-        "attributes": {
-          "name": "Albert Camus"
-        },
-        "links": {
-          "self": "/api/v1/authors/1"
-        },
-        "relationships": {
-          "books": {
-            "links": {
-              "self": "/api/v1/authors/1/relationships/books",
-              "related": "/api/v1/authors/1/books"
-            }
-          },
-          "publisher": {
-            "data": {
+  "books": {
+    "1": {
+      "id": "1",
+      "attributes": {
+        "title": "The Stranger"
+      },
+      "links": {
+        "self": "/api/v1/books/1"
+      },
+      "relationships": {
+        "authors": {
+          "data": [
+            {
               "id": "1",
-              "type": "publisher"
+              "type": "authors"
+            }
+          ],
+          "links": {
+            "self": "/api/v1/books/1/relationships/authors",
+            "related": "/api/v1/books/1/authors"
+          }
+        },
+        "tags": {
+          "data": [
+            {
+              "id": "1",
+              "type": "tags"
             },
-            "links": {
-              "self": "/api/v1/authors/1/relationships/publisher",
-              "related": "/api/v1/authors/1/publisher"
+            {
+              "id": "2",
+              "type": "tags"
+            },
+            {
+              "id": "3",
+              "type": "tags"
             }
+          ],
+          "links": {
+            "self": "/api/v1/books/1/relationships/tags",
+            "related": "/api/v1/books/1/tags"
           }
         }
       }
-    },
-    "tags": {
-      "1": {
-        "id": "1",
-        "attributes": {
-          "name": "Fiction"
-        },
-        "links": {
-          "self": "/api/v1/tags/1"
-        },
-        "relationships": {
-          "books": {
-            "links": {
-              "self": "/api/v1/tags/1/relationships/books",
-              "related": "/api/v1/tags/1/books"
-            }
-          }
-        }
+    }
+  },
+  "authors": {
+    "1": {
+      "id": "1",
+      "attributes": {
+        "name": "Albert Camus"
       },
-      "2": {
-        "id": "2",
-        "attributes": {
-          "name": "Philosophy"
-        },
-        "links": {
-          "self": "/api/v1/tags/2"
-        },
-        "relationships": {
-          "books": {
-            "links": {
-              "self": "/api/v1/tags/2/relationships/books",
-              "related": "/api/v1/tags/2/books"
-            }
-          }
-        }
+      "links": {
+        "self": "/api/v1/authors/1"
       },
-      "3": {
-        "id": "3",
-        "attributes": {
-          "name": "French"
+      "relationships": {
+        "books": {
+          "links": {
+            "self": "/api/v1/authors/1/relationships/books",
+            "related": "/api/v1/authors/1/books"
+          }
         },
-        "links": {
-          "self": "/api/v1/tags/3"
-        },
-        "relationships": {
-          "books": {
-            "links": {
-              "self": "/api/v1/tags/3/relationships/books",
-              "related": "/api/v1/tags/3/books"
+        "publisher": {
+          "data": {
+            "id": "1",
+            "type": "publisher"
+          },
+          "links": {
+            "self": "/api/v1/authors/1/relationships/publisher",
+            "related": "/api/v1/authors/1/publisher"
+          }
+        }
+      }
+    }
+  },
+  "tags": {
+    "1": {
+      "id": "1",
+      "attributes": {
+        "name": "Fiction"
+      },
+      "links": {
+        "self": "/api/v1/tags/1"
+      },
+      "relationships": {
+        "books": {
+          "links": {
+            "self": "/api/v1/tags/1/relationships/books",
+            "related": "/api/v1/tags/1/books"
+          }
+        }
+      }
+    },
+    "2": {
+      "id": "2",
+      "attributes": {
+        "name": "Philosophy"
+      },
+      "links": {
+        "self": "/api/v1/tags/2"
+      },
+      "relationships": {
+        "books": {
+          "links": {
+            "self": "/api/v1/tags/2/relationships/books",
+            "related": "/api/v1/tags/2/books"
+          }
+        }
+      }
+    },
+    "3": {
+      "id": "3",
+      "attributes": {
+        "name": "French"
+      },
+      "links": {
+        "self": "/api/v1/tags/3"
+      },
+      "relationships": {
+        "books": {
+          "links": {
+            "self": "/api/v1/tags/3/relationships/books",
+            "related": "/api/v1/tags/3/books"
+          }
+        }
+      }
+    }
+  },
+  "publisher": {
+    "1": {
+      "id": "1",
+      "attributes": {
+        "name": "Penguin"
+      },
+      "links": {
+        "self": "/api/v1/publishers/1"
+      },
+      "relationships": {
+        "locations": {
+          "data": [
+            {
+              "id": "1",
+              "type": "locations"
             }
-          }
+          ]
         }
       }
-    },
-    "publisher": {
-      "1": {
-        "id": "1",
-        "attributes": {
-          "name": "Penguin"
-        },
-        "links": {
-          "self": "/api/v1/publishers/1"
-        },
-        "relationships": {
-          "locations": {
-            "data": [
-              {
-                "id": "1",
-                "type": "locations"
-              }
-            ]
-          }
-        }
-      }
-    },
-    "locations": {
-      "1": {
-        "id": "1",
-        "attributes": {
-          "city": "Denver",
-          "state": "Colorado"
-        },
-        "links": {},
-        "relationships": {}
-      }
+    }
+  },
+  "locations": {
+    "1": {
+      "id": "1",
+      "attributes": {
+        "city": "Denver",
+        "state": "Colorado"
+      },
+      "links": {},
+      "relationships": {}
     }
   }
 }
