@@ -1,0 +1,5 @@
+--sort
+--compilers js:babel-register
+--reporter spec
+--check-leaks
+./spec/**/*.spec.js

@@ -1,0 +1,13 @@
+{
+  "presets": [
+    "stage-2",
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": ["last 2 versions"]
+        }
+      }
+    ]
+  ]
+}
