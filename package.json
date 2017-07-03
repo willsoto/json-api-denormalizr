@@ -57,9 +57,7 @@
     "standard-version": "^4.2.0",
     "validate-commit": "^3.2.1"
   },
-  "dependencies": {
-    "lodash": "^4.17.4"
-  },
+  "dependencies": {},
   "lint-staged": {
     "*.js": ["prettier --single-quote --print-width 120 --write", "eslint --fix", "git add"],
     "*.json": ["prettier --print-width 120 --write", "git add"]

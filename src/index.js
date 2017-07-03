@@ -1,8 +1,6 @@
-import _ from 'lodash';
-
 export const denormalize = (state, entity, options = {}) => {
   if (options.pathToEntities) {
-    state = _.get(state, options.pathToEntities);
+    state = state[options.pathToEntities];
   }
 
   let result = {
@@ -26,8 +24,8 @@ const processRelationships = (entity, relationships, state) => {
       continue;
     }
 
-    if (_.isArray(data)) {
-      entity[type] = _.map(data, item => createRelationship(item, state));
+    if (Array.isArray(data)) {
+      entity[type] = data.map(item => createRelationship(item, state));
     } else {
       entity[type] = createRelationship(data, state);
     }
