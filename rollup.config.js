@@ -8,10 +8,6 @@ export default {
   moduleName: 'json-api-denormalizr',
   format: 'umd',
   dest: 'dist/index.js',
-  external: ['lodash'],
-  globals: {
-    lodash: '_'
-  },
   sourceMap: true,
   plugins: [
     eslint(),
