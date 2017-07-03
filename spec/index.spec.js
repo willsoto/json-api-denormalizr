@@ -6,7 +6,9 @@ import state from './state.mock.json';
 
 describe('denormalize', function() {
   beforeEach(function() {
-    this.result = denormalize(state, 'books["1"]');
+    const entity = state.entities.books['1'];
+
+    this.result = denormalize(state, entity);
   });
 
   it('works', function() {
