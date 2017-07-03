@@ -1,6 +1,6 @@
 {
   "name": "json-api-denormalizr",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "",
   "main": "./dist/index.js",
   "files": ["src", "dist"],
@@ -11,7 +11,7 @@
     "test": "mocha --opts ./mocha.opts",
     "test:watch": "npm test -- --watch",
     "lint": "eslint src spec --fix",
-    "prerelease": "cross-env NODE_ENV=test nyc npm test",
+    "prerelease": "cross-env NODE_ENV=test nyc npm test && npm run build",
     "release": "standard-version --sign && git push --follow-tags origin master",
     "precommit": "lint-staged && npm test",
     "commitmsg": "validate-commit-msg"
