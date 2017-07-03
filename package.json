@@ -3,22 +3,24 @@
   "version": "0.1.0",
   "description": "",
   "main": "./dist/index.js",
-  "files": [
-    "src",
-    "dist"
-  ],
+  "files": ["src", "dist"],
   "scripts": {
+    "clean": "rimraf dist/",
+    "prebuild": "npm run clean",
     "build": "webpack -p --progress",
-    "build:watch": "npm run build -- --watch",
     "test": "mocha --opts ./mocha.opts",
     "test:watch": "npm test -- --watch",
-    "lint": "eslint src test"
+    "lint": "eslint src spec --fix",
+    "prerelease": "cross-env NODE_ENV=test nyc npm test",
+    "release": "standard-version --sign && git push --follow-tags origin master",
+    "precommit": "lint-staged",
+    "commitmsg": "validate-commit-msg"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willsoto/json-api-denormalizr.git"
   },
-  "keywords": [],
+  "keywords": ["redux", "denormalize", "json api"],
   "author": "Will Soto <will.soto9+github@gmail.com> (https://github.com/willsoto)",
   "license": "Apache-2.0",
   "bugs": {
@@ -29,22 +31,39 @@
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-istanbul": "^4.1.4",
     "babel-preset-env": "^1.5.2",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "babel-register": "^6.24.1",
     "chai": "^4.0.2",
+    "cross-env": "^5.0.1",
     "eslint": "^4.1.1",
     "eslint-config-prettier": "^2.3.0",
     "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-loader": "^1.8.0",
     "eslint-plugin-import": "^2.6.1",
     "eslint-plugin-prettier": "^2.1.2",
+    "husky": "^0.14.2",
+    "lint-staged": "^4.0.0",
     "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
     "prettier": "^1.5.2",
+    "rimraf": "^2.6.1",
+    "standard-version": "^4.2.0",
+    "validate-commit": "^3.2.1",
     "webpack": "^3.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.4"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --single-quote --print-width 120 --write", "eslint --fix", "git add"]
+  },
+  "nyc": {
+    "require": ["babel-register"],
+    "sourceMap": false,
+    "instrument": false,
+    "reporter": ["lcov", "text-summary"]
   }
 }
