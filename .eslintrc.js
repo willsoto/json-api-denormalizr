@@ -26,12 +26,6 @@ module.exports = {
         'newlines-between': 'always'
       }
     ],
-    'import/no-internal-modules': [
-      1,
-      {
-        allow: ['**/{common,assets,components}/**']
-      }
-    ],
     'import/no-duplicates': 2
   }
 };
