@@ -4,11 +4,13 @@ import uglify from 'rollup-plugin-uglify';
 import eslint from 'rollup-plugin-eslint';
 
 export default {
-  entry: 'src/index.js',
-  moduleName: 'json-api-denormalizr',
-  format: 'umd',
-  dest: 'dist/index.js',
-  sourceMap: true,
+  input: 'src/index.js',
+  name: 'json-api-denormalizr',
+  output: {
+    file: 'dist/index.js',
+    format: 'umd'
+  },
+  sourcemap: true,
   plugins: [
     eslint(),
     babel({
