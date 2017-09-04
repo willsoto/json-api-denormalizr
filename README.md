@@ -113,9 +113,7 @@ export const bookSelector = bookId => {
   return createSelector([entitiesSelector, booksSelector], (entities, books) => {
     const book = books[bookId];
 
-    return denormalize(entities, book, {
-      pathToEntities: 'entities'
-    });
+    return denormalize(entities, book);
   });
 };
 ```
